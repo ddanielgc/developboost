@@ -14,13 +14,14 @@
 // Blog pages
 
 Route::get('/', function () {
-    return redirect('/blog');
+    return redirect('blog/home');
 });
 
-
+/*
 Route::get('/home', function () {
     return view('blog/home');
 });
+*/
 
 /*
 Route::get('/left-sidebar', function () {
@@ -30,13 +31,15 @@ Route::get('/left-sidebar', function () {
 Route::get('/right-sidebar', function () {
     return view('right-sidebar');
 });
-*/
+
 
 Route::get('/no-sidebar', function () {
     return view('blog/no-sidebar');
 });
+*/
 
-get('blog', 'BlogController@index');
+get('blog/home', 'BlogController@home');
+get('blog/posts', 'BlogController@posts');
 get('blog/{slug}', 'BlogController@showPost');
 
 

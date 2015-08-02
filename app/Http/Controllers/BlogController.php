@@ -11,7 +11,7 @@ use Carbon\Carbon;
 
 class BlogController extends Controller
 {
-    public function index()
+    public function posts()
     {
         $posts = Post::where('published_at', '<=', Carbon::now())
             ->orderBy('published_at', 'desc')
@@ -19,6 +19,18 @@ class BlogController extends Controller
 
         return view('blog.index', compact('posts'));
     }
+
+    public function home()
+    {
+        /*
+        $posts = Post::where('published_at', '<=', Carbon::now())
+            ->orderBy('published_at', 'desc')
+            ->paginate(config('blog.posts_per_page'));
+        */
+
+        return view('blog.home');
+    }
+
 
     public function showPost($slug)
     {

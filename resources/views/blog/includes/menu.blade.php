@@ -4,13 +4,13 @@
 
         <!-- Logo -->
         <h1>
-            <a href="/home">Dev Boost</a>
+            <a href="/blog/home">Dev Boost</a>
         </h1>
 
         <!-- Nav -->
         <nav id="nav">
             <ul>
-                <li><a href="/home">Home</a></li>
+                <li><a href="/blog/home">Home</a></li>
                <!--
                 <li>
                     <a href="#">Dropdown</a>
@@ -37,7 +37,7 @@
                 <li class="current"><a href="no-sidebar.blade.php">No Sidebar</a></li>
                 -->
                 <li>
-                    <a href="/blog">Blog</a>
+                    <a href="/blog/posts">Blog Posts</a>
                 </li>
             </ul>
         </nav>
