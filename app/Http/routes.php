@@ -11,15 +11,18 @@
 |
 */
 
+// Blog pages
+
 Route::get('/', function () {
     return redirect('/blog');
 });
 
 
 Route::get('/home', function () {
-    return view('home');
+    return view('blog/home');
 });
 
+/*
 Route::get('/left-sidebar', function () {
     return view('left-sidebar');
 });
@@ -27,10 +30,31 @@ Route::get('/left-sidebar', function () {
 Route::get('/right-sidebar', function () {
     return view('right-sidebar');
 });
+*/
 
 Route::get('/no-sidebar', function () {
-    return view('no-sidebar');
+    return view('blog/no-sidebar');
 });
 
 get('blog', 'BlogController@index');
 get('blog/{slug}', 'BlogController@showPost');
+
+
+// Admin area
+get('admin', function () {
+    return redirect('/admin/post');
+});
+
+$router->group([
+    'namespace' => 'Admin',
+    'middleware' => 'auth',
+], function () {
+    resource('admin/post', 'PostController');
+    resource('admin/tag', 'TagController');
+    get('admin/upload', 'UploadController@index');
+});
+
+// Logging in and out
+get('/auth/login', 'Auth\AuthController@getLogin');
+post('/auth/login', 'Auth\AuthController@postLogin');
+get('/auth/logout', 'Auth\AuthController@getLogout');
