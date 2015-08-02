@@ -46,9 +46,9 @@
 											<li><a href="#">Veroeros feugiat</a></li>
 										</ul>
 									</li>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li class="current"><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li>
+									<li><a href="left-sidebar.blade.php">Left Sidebar</a></li>
+									<li class="current"><a href="right-sidebar.blade.php">Right Sidebar</a></li>
+									<li><a href="no-sidebar.blade.php">No Sidebar</a></li>
 								</ul>
 							</nav>
 
