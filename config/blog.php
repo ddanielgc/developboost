@@ -8,5 +8,9 @@
 
 return [
     'title' => 'Dev Boost',
-    'posts_per_page' => 5
+    'posts_per_page' => 5,
+    'uploads' => [
+        'storage' => 'local',
+        'webpath' => '/uploads',
+    ],
 ];
