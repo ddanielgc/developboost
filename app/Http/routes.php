@@ -14,13 +14,14 @@
 // Blog pages
 
 Route::get('/', function () {
-    return redirect('/blog');
+    return redirect('blog/home');
 });
 
-
+/*
 Route::get('/home', function () {
     return view('blog/home');
 });
+*/
 
 /*
 Route::get('/left-sidebar', function () {
@@ -30,13 +31,15 @@ Route::get('/left-sidebar', function () {
 Route::get('/right-sidebar', function () {
     return view('right-sidebar');
 });
-*/
+
 
 Route::get('/no-sidebar', function () {
     return view('blog/no-sidebar');
 });
+*/
 
-get('blog', 'BlogController@index');
+get('blog/home', 'BlogController@home');
+get('blog/posts', 'BlogController@posts');
 get('blog/{slug}', 'BlogController@showPost');
 
 
@@ -45,16 +48,27 @@ get('admin', function () {
     return redirect('/admin/post');
 });
 
+
 $router->group([
     'namespace' => 'Admin',
     'middleware' => 'auth',
 ], function () {
-    resource('admin/post', 'PostController');
-    resource('admin/tag', 'TagController');
+    resource('admin/post', 'PostController', ['except' => 'show']);
+    resource('admin/tag', 'TagController', ['except' => 'show']);
+
+    // upload
     get('admin/upload', 'UploadController@index');
+    post('admin/upload/file', 'UploadController@uploadFile');
+    delete('admin/upload/file', 'UploadController@deleteFile');
+    post('admin/upload/folder', 'UploadController@createFolder');
+    delete('admin/upload/folder', 'UploadController@deleteFolder');
+
 });
 
 // Logging in and out
 get('/auth/login', 'Auth\AuthController@getLogin');
 post('/auth/login', 'Auth\AuthController@postLogin');
 get('/auth/logout', 'Auth\AuthController@getLogout');
+
+
+

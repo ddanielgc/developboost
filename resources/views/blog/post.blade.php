@@ -12,9 +12,10 @@
 
                     <!-- Content -->
                     <article class="box post">
-                        <a href="#" class="image featured">
+                        <!--<a href="#" class="image featured">
                             <img src="/images/pic01.jpg" alt="" />
                         </a>
+                        -->
 
                         <header>
                             <h2>{{ $post->title }}</h2>
