@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row page-title-row">
             <div class="col-md-6">
-                <h3>Posts <small>» Listing</small></h3>
+                <h3>Posts <small>&raquo; Listing</small></h3>
             </div>
             <div class="col-md-6 text-right">
                 <a href="/admin/post/create" class="btn btn-success btn-md">
@@ -57,7 +57,6 @@
 @stop
 
 @section('scripts')
-
     <script>
         $(function() {
             $("#posts-table").DataTable({

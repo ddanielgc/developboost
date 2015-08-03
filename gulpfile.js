@@ -67,7 +67,6 @@ gulp.task("copyfiles", function() {
  * Default gulp is to run this elixir stuff
  */
 elixir(function(mix) {
-    mix.phpUnit();
 
     // Combine scripts
     mix.scripts([
@@ -83,5 +82,3 @@ elixir(function(mix) {
     // Compile Less
     mix.less('admin.less', 'public/assets/css/admin.css');
 });
-
-

@@ -6,12 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-
     protected $fillable = [
-                            'tag', 'title', 'subtitle',
-                            'page_image', 'meta_description',
-                            'reverse_direction',
-                        ];
+        'tag', 'title', 'subtitle', 'page_image', 'meta_description',
+        'reverse_direction',
+    ];
 
     /**
      * The many-to-many relationship between tags and posts.
@@ -22,7 +20,6 @@ class Tag extends Model
     {
         return $this->belongsToMany('App\Post', 'post_tag_pivot');
     }
-
 
     /**
      * Add any tags needed from the list
@@ -47,5 +44,19 @@ class Tag extends Model
                 'reverse_direction' => false,
             ]);
         }
+    }
+
+    /**
+     * Return the index layout to use for a tag
+     *
+     * @param string $tag
+     * @param string $default
+     * @return string
+     */
+    public static function layout($tag, $default = 'blog.layouts.index')
+    {
+        $layout = static::whereTag($tag)->pluck('layout');
+
+        return $layout ?: $default;
     }
 }
