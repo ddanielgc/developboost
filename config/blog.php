@@ -25,6 +25,7 @@ return [
     'posts_per_page' => 5,
     'uploads' => [
         'storage' => 's3',
-        'webpath' => 'developboost.s3-website-us-east-1.amazonaws.com'
+        //'webpath' => 'developboost.s3-website-us-east-1.amazonaws.com'
+        'webpath' => 'https://s3.amazonaws.com/developboost/'
     ],
 ];
