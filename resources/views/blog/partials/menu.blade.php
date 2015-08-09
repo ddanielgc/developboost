@@ -4,7 +4,7 @@
 
         <!-- Logo -->
         <h1>
-            <a href="/blog/home">Dev Boost</a>
+            <a href="/blog/home">{{ config('blog.name') }}</a>
         </h1>
 
         <!-- Nav -->
@@ -37,17 +37,14 @@
                 <li class="current"><a href="no-sidebar.blade.php">No Sidebar</a></li>
                 -->
                 <li>
-                    <a href="/blog/posts">Blog Posts</a>
+                    <a href="/blog/posts">Postagens</a>
                 </li>
             </ul>
         </nav>
 
-
         @section('menu_add')
 
         @show
-
-
 
     </div>
 </div>

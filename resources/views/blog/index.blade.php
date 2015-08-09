@@ -6,13 +6,15 @@
 
     <div id="page-wrapper">
 
-        @include('blog.includes.menu')
+        @include('blog.partials.menu')
 
         <div class="row">
             <div class="12u">
+
                 <!-- Blog -->
                 <header class="major">
-                    <h2>The Blog</h2>
+                    <h2>Postagens</h2>
+
                 </header>
 
                 @foreach ($posts as $post)

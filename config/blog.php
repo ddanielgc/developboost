@@ -7,31 +7,20 @@
  */
 
 
-/*
 return [
-    'title' => 'Dev Boost',
-    'posts_per_page' => 5,
-    'uploads' => [
-
-        'storage' => 'local',
-        'webpath' => '/uploads',
-    ],
-];
-*/
-
-
-return [
-    'name' => "Dev Boost",
-    'title' > 'Dev Boost',
+    'name' => "DEVELOP BOOST",
+    'email' => "dev.danielgusmao@gmail.com",
+    'main_title' => 'Bem vindo ao Develop Boost',
+    'main_subtitle' => 'Ganhando agilidade e qualidade',
+    'title' > 'Develop Boost',
     'posts_per_page' => 10,
-    'subtitle' => 'Blog written in Laravel 5.1',
-    'description' => 'php, laravel',
-    'author' => 'Chuck Heintzelman',
+    'subtitle' => 'Um blog para aqueles que desejam ter mais qualidade e velocidade na arte web.',
+    'description' => 'PHP, laravel',
+    'author' => 'Daniel Gusmão',
     'page_image' => 'home-bg.jpg',
 
     'uploads' => [
         'storage' => 's3',
-        //'webpath' => 'developboost.s3-website-us-east-1.amazonaws.com'
         'webpath' => 'https://s3.amazonaws.com/developboost/'
     ],
 ];

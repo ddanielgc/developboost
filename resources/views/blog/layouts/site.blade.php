@@ -21,7 +21,7 @@
 
     @yield('content')
 
-    @include('blog.includes.footer')
+    @include('blog.partials.footer')
 
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/js/jquery.dropotron.min.js"></script>

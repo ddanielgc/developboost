@@ -44,31 +44,34 @@
                 </div>
                 <div class="4u 12u(mobile)">
                     <section>
+
                         <header>
-                            <h2>What's this all about?</h2>
+                            <h2>Qual a motivação deste site ?</h2>
                         </header>
 
                         <a href="#" class="image featured">
-                            <img src="/images/pic10.jpg" alt="" />
+                            <img src="/images/nerd-303x135.jpg" alt="" />
                         </a>
 
                         <p>
-                            This is <strong>Dopetrope</strong> a free, fully responsive HTML5 site template by
-                            <a href="http://n33.co">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a> It's released for free under
-                            the <a href="http://html5up.net/license/">Creative Commons Attribution</a> license so feel free to use it for any personal or commercial project &ndash; just don't forget to credit us!
+                            Esse é o <strong>{{ config('blog.title') }}</strong> {{ config('blog.subtitle') }}
                         </p>
+
                         <footer>
                             <a href="#" class="button">Find out more</a>
                         </footer>
                     </section>
                 </div>
             </div>
+
             <div class="row">
                 <div class="4u 12u(mobile)">
                     <section>
+
                         <header>
                             <h2>Tempus consequat</h2>
                         </header>
+
                         <ul class="divided">
                             <li><a href="#">Lorem ipsum dolor sit amet sit veroeros</a></li>
                             <li><a href="#">Sed et blandit consequat sed tlorem blandit</a></li>
@@ -77,13 +80,17 @@
                             <li><a href="#">Sem feugiat sapien id suscipit magna felis nec</a></li>
                             <li><a href="#">Elit class aptent taciti sociosqu ad litora</a></li>
                         </ul>
+
                     </section>
                 </div>
+
                 <div class="4u 12u(mobile)">
                     <section>
+
                         <header>
                             <h2>Ipsum et phasellus</h2>
                         </header>
+
                         <ul class="divided">
                             <li><a href="#">Lorem ipsum dolor sit amet sit veroeros</a></li>
                             <li><a href="#">Sed et blandit consequat sed tlorem blandit</a></li>
@@ -92,39 +99,39 @@
                             <li><a href="#">Sem feugiat sapien id suscipit magna felis nec</a></li>
                             <li><a href="#">Elit class aptent taciti sociosqu ad litora</a></li>
                         </ul>
+
                     </section>
                 </div>
                 <div class="4u 12u(mobile)">
+
                     <section>
                         <header>
-                            <h2>Vitae tempor lorem</h2>
+                            <h2>Links Sociais</h2>
                         </header>
+
                         <ul class="social">
                             <li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
                             <li><a class="icon fa-twitter" href="#"><span class="label">Twitter</span></a></li>
-                            <li><a class="icon fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
+                            <li><a class="icon fa-bitbucket" href="#"><span class="label">BitBucket</span></a></li>
                             <li><a class="icon fa-linkedin" href="#"><span class="label">LinkedIn</span></a></li>
                             <li><a class="icon fa-google-plus" href="#"><span class="label">Google+</span></a></li>
                         </ul>
+
                         <ul class="contact">
+
                             <li>
-                                <h3>Address</h3>
+                                <h3>Endereço</h3>
+
                                 <p>
-                                    Untitled Incorporated<br />
-                                    1234 Somewhere Road Suite<br />
-                                    Nashville, TN 00000-0000
+                                    Rio De Janeiro<br/>
                                 </p>
                             </li>
+
                             <li>
-                                <h3>Mail</h3>
-                                <p><a href="#">someone@untitled.tld</a></p>
+                                <h3>E-Mail</h3>
+                                <p><a href="#">{{ config('blog.email') }}</a></p>
                             </li>
-                            <!--
-                            <li>
-                                <h3>Phone</h3>
-                                <p>000-0000</p>
-                            </li>
-                            -->
+
                         </ul>
                     </section>
                 </div>
@@ -137,7 +144,7 @@
                     <!-- Copyright -->
                     <div id="copyright">
                         <ul class="links">
-                            <li>&copy; Dev Boost. All rights reserved.</li><li>Author: {{ config('blog.author') }}</li>
+                            <li>&copy; Develop Boost. Todos os direitos reservados.</li><li>Autor: {{ config('blog.author') }}</li>
                         </ul>
                     </div>
 
