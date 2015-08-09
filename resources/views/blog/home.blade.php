@@ -31,7 +31,7 @@
                         <section>
 
                             <header class="major">
-                                <h2>Últimas postagens</h2>
+                                <h2>Últimas Postagens</h2>
                             </header>
 
                             <div class="row">

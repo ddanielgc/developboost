@@ -18,9 +18,10 @@
         </a>
 
         <p>
-            Posted on {{ $post->published_at->format('F j, Y') }}
+            Postado {{ $post->published_at->diffForHumans() }}
+
             @if ($post->tags->count())
-                in
+                em
                 {!! join(', ', $post->tagLinks()) !!}
             @endif
         </p>
@@ -28,7 +29,7 @@
         <footer>
             <ul class="actions">
                 <li><a href="#" class="button icon fa-file-text">Continue Lendo</a></li>
-                <li><a href="#" class="button alt icon fa-comment">33 comments</a></li>
+                <li><a href="#" class="button alt icon fa-comment">33 Comentários</a></li>
             </ul>
         </footer>
 

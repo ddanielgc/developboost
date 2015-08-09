@@ -37,7 +37,7 @@
                             </a>
 
                             <p>
-                                Posted on {{ $post->published_at->format('F j, Y') }}
+                                Postado {{ $post->published_at->diffForHumans() }}
                                 @if ($post->tags->count())
                                     in
                                     {!! join(', ', $post->tagLinks()) !!}

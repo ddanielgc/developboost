@@ -17,7 +17,7 @@ Route::get('/', function () {
     return redirect('blog/home');
 });
 
-get('blog', 'BlogController@index');
+//get('blog', 'BlogController@index');
 get('blog/home', 'BlogController@home');
 get('blog/posts', 'BlogController@posts');
 get('blog/{slug}', 'BlogController@showPost');

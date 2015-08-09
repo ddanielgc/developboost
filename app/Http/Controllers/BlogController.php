@@ -12,15 +12,16 @@ use Carbon\Carbon;
 class BlogController extends Controller
 {
 
+    /*
     public function index(Request $request)
     {
         $tag = $request->get('tag');
         $data = $this->dispatch(new BlogIndexData($tag));
         //$layout = $tag ? Tag::layout($tag) : 'blog.layouts.site';
 
-        return view('blog.index', $data);
+        return view('blog.posts', $data);
     }
-
+    */
 
     public function home(Request $request)
     {
@@ -46,10 +47,10 @@ class BlogController extends Controller
 
         $data = $this->dispatch(new BlogIndexData($tag));
 
-        $layout = $tag ? Tag::layout($tag) : 'blog.layouts.site';
+        //$layout = $tag ? Tag::layout($tag) : 'blog.layouts.site';
 
-        return view($layout, $data);
-        //return view('blog.index', compact('posts'));
+        //return view($layout, $data);
+        return view('blog.posts', $data);
     }
 
 

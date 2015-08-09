@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Blade;
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         Blade::directive('break', function($expression) {
             return "<?php break; ?>";
         });
@@ -21,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('continue', function($expression) {
             return "<?php continue; ?>";
         });
+
+        Carbon::setLocale(config('app.locale'));
+        setlocale(LC_TIME, config('app.locale') . '.UTF-8');
     }
 
     /**
@@ -30,6 +35,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+
     }
 }
