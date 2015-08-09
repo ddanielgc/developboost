@@ -50,7 +50,7 @@
                         </header>
 
                         <a href="#" class="image featured">
-                            <img src="/images/nerd-303x135.jpg" alt="" />
+                            <img src="/images/cut_draw.jpg" alt="Develop Boost" />
                         </a>
 
                         <p>
@@ -144,7 +144,7 @@
                     <!-- Copyright -->
                     <div id="copyright">
                         <ul class="links">
-                            <li>&copy; Develop Boost. Todos os direitos reservados.</li><li>Autor: {{ config('blog.author') }}</li>
+                            <li>&copy; Develop Boost. 2015 - Todos os direitos reservados.</li><li>Autor: {{ config('blog.author') }}</li>
                         </ul>
                     </div>
 

@@ -31,13 +31,13 @@
                         <section>
 
                             <header class="major">
-                                <h2>The Blog</h2>
+                                <h2>Últimas postagens</h2>
                             </header>
 
                             <div class="row">
-                                @foreach ($posts as $key => $post)
+                                @foreach($posts as $key => $post)
 
-                                    @if ($key >= 2)
+                                    @if($key >= 2)
                                         @break
                                     @endif
 

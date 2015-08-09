@@ -22,15 +22,17 @@
                         <section class="box">
 
                             <a href="#" class="image featured">
-                                <img src="images/pic08.jpg" alt="" />
+                                <img src="{{ page_image($post->page_image) }}" alt="{{ $post->title }}" />
                             </a>
 
                             <a href="{{ $post->url($tag) }}">
                                 <header>
                                     <h3>{{ $post->title }}</h3>
+
                                     @if ($post->subtitle)
                                         <p>{{ $post->subtitle }}</p>
                                     @endif
+
                                 </header>
                             </a>
 
