@@ -48,6 +48,8 @@ class BlogIndexData extends Job implements SelfHandling
             ->orderBy('published_at', 'desc')
             ->simplePaginate(config('blog.posts_per_page'));
 
+        $tags = Tag::all();
+
         return [
             'title' => config('blog.title'),
             'subtitle' => config('blog.subtitle'),
@@ -56,6 +58,7 @@ class BlogIndexData extends Job implements SelfHandling
             'meta_description' => config('blog.description'),
             'reverse_direction' => false,
             'tag' => null,
+            'tags' => $tags
         ];
     }
 
@@ -79,6 +82,8 @@ class BlogIndexData extends Job implements SelfHandling
             ->simplePaginate(config('blog.posts_per_page'));
         $posts->addQuery('tag', $tag->tag);
 
+        $tags = Tag::all();
+
         $page_image = $tag->page_image ?: config('blog.page_image');
 
         return [
@@ -87,6 +92,7 @@ class BlogIndexData extends Job implements SelfHandling
             'posts' => $posts,
             'page_image' => $page_image,
             'tag' => $tag,
+            'tags' => $tags,
             'reverse_direction' => $reverse_direction,
             'meta_description' => $tag->meta_description ?: \
                 config('blog.description'),

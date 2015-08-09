@@ -5,48 +5,51 @@
                 <div class="8u 12u(mobile)">
                     <section>
                         <header>
-                            <h2>Posts</h2>
+                            <h2>Mais Postagens</h2>
                         </header>
 
                         <ul class="dates">
-                            <li>
-                                <span class="date">Jan <strong>27</strong></span>
 
-                                <h3>
-                                    <a href="#">Lorem dolor sit amet veroeros</a>
-                                </h3>
+                            @foreach($posts as $key => $post)
+                                @if($key >= 6)
+                                    @break
+                                @endif
 
-                                <p>Ipsum dolor sit amet veroeros consequat blandit ipsum phasellus lorem consequat etiam.</p>
-                            </li>
+                                <li>
+                                    <a href="{{ $post->url($tag) }}">
+                                        <span class="date">{{ $post->published_at->format('M') }} <strong>{{ $post->published_at->format('jS') }}</strong>
+                                        </span>
+                                    </a>
 
-                            <li>
-                                <span class="date">Jan <strong>23</strong></span>
-                                <h3><a href="#">Ipsum sed blandit nisl consequat</a></h3>
-                                <p>Blandit phasellus lorem ipsum dolor tempor sapien tortor hendrerit adipiscing feugiat lorem.</p>
-                            </li>
-                            <li>
-                                <span class="date">Jan <strong>15</strong></span>
-                                <h3><a href="#">Magna tempus lorem feugiat</a></h3>
-                                <p>Dolore consequat sed phasellus lorem sed etiam nullam dolor etiam sed amet sit consequat.</p>
-                            </li>
-                            <li>
-                                <span class="date">Jan <strong>12</strong></span>
-                                <h3><a href="#">Dolore tempus ipsum feugiat nulla</a></h3>
-                                <p>Feugiat lorem dolor sed nullam tempus lorem ipsum dolor sit amet nullam consequat.</p>
-                            </li>
-                            <li>
-                                <span class="date">Jan <strong>10</strong></span>
-                                <h3><a href="#">Blandit tempus aliquam?</a></h3>
-                                <p>Feugiat sed tempus blandit tempus adipiscing nisl lorem ipsum dolor sit amet dolore.</p>
-                            </li>
+                                    <h3>
+                                        <a href="{{ $post->url($tag) }}">
+                                            {{ $post->title }}
+                                        </a>
+                                    </h3>
+
+
+                                        @if ($post->subtitle)
+                                            <a href="{{ $post->url($tag) }}">
+                                                <p>{{ $post->subtitle }}</p>
+                                            </a>
+                                        @endif
+                                </li>
+
+                            @endforeach
                         </ul>
+
+                        <footer>
+                            <a href="/blog/posts" class="button">Ver Todas</a>
+                        </footer>
+
                     </section>
                 </div>
+
                 <div class="4u 12u(mobile)">
                     <section>
 
                         <header>
-                            <h2>Qual a motivação deste site ?</h2>
+                            <h2>Qual a nossa motivação ?</h2>
                         </header>
 
                         <a href="#" class="image featured">
@@ -58,7 +61,7 @@
                         </p>
 
                         <footer>
-                            <a href="#" class="button">Find out more</a>
+                            <a href="#" class="button">Saiba Mais</a>
                         </footer>
                     </section>
                 </div>
@@ -69,22 +72,29 @@
                     <section>
 
                         <header>
-                            <h2>Tempus consequat</h2>
+                            <h2>Tags</h2>
                         </header>
 
                         <ul class="divided">
-                            <li><a href="#">Lorem ipsum dolor sit amet sit veroeros</a></li>
-                            <li><a href="#">Sed et blandit consequat sed tlorem blandit</a></li>
-                            <li><a href="#">Adipiscing feugiat phasellus sed tempus</a></li>
-                            <li><a href="#">Hendrerit tortor vitae mattis tempor sapien</a></li>
-                            <li><a href="#">Sem feugiat sapien id suscipit magna felis nec</a></li>
-                            <li><a href="#">Elit class aptent taciti sociosqu ad litora</a></li>
+
+                            @foreach($tags as $key => $tag)
+                                <li>
+                                    <a href="#">
+                                        <h4>{{ $tag->title }}</h4>
+
+                                        <h5>{{ $tag->subtitle }}</h5>
+                                    </a>
+                                </li>
+                            @endforeach
+
                         </ul>
 
                     </section>
                 </div>
 
+
                 <div class="4u 12u(mobile)">
+                    <!--
                     <section>
 
                         <header>
@@ -101,7 +111,9 @@
                         </ul>
 
                     </section>
+                    -->
                 </div>
+
                 <div class="4u 12u(mobile)">
 
                     <section>

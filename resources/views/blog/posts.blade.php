@@ -4,59 +4,76 @@
 
     <body class="no-sidebar">
 
-    <div id="page-wrapper">
+        <div id="page-wrapper">
 
-        @include('blog.partials.menu')
+            @include('blog.partials.menu')
 
-        <div class="row">
-            <div class="12u">
+            <div id="main-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="12u">
+                            <header class="major">
+                                <h2>Postagens</h2>
+                            </header>
 
-                <!-- Blog -->
-                <header class="major">
-                    <h2>Postagens</h2>
+                                <?php $count = 1 ?>
+                                <?php $max = count($posts) ?>
 
-                </header>
+                                @foreach ($posts as $key => $post)
 
-                @foreach ($posts as $post)
-                    <div class="6u 12u(mobile)">
-                        <section class="box">
-
-                            <a href="#" class="image featured">
-                                <img src="{{ page_image($post->page_image) }}" alt="{{ $post->title }}" />
-                            </a>
-
-                            <a href="{{ $post->url($tag) }}">
-                                <header>
-                                    <h3>{{ $post->title }}</h3>
-
-                                    @if ($post->subtitle)
-                                        <p>{{ $post->subtitle }}</p>
+                                    @if($count == 1)
+                                        <div class="row">
                                     @endif
 
-                                </header>
-                            </a>
+                                        <div class="4u 12u(mobile)">
+                                            <section class="box">
 
-                            <p>
-                                Postado {{ $post->published_at->diffForHumans() }}
-                                @if ($post->tags->count())
-                                    in
-                                    {!! join(', ', $post->tagLinks()) !!}
-                                @endif
-                            </p>
+                                                <a href="{{ $post->url($tag) }}" class="image featured">
+                                                    <img src="{{ page_image($post->page_image) }}" alt="{{ $post->title }}" />
+                                                </a>
 
-                            <footer>
-                                <ul class="actions">
-                                    <li><a href="#" class="button icon fa-file-text">Continue Reading</a></li>
-                                    <li><a href="#" class="button alt icon fa-comment">33 comments</a></li>
-                                </ul>
-                            </footer>
+                                                <a href="{{ $post->url($tag) }}">
+                                                    <header>
+                                                        <h3>{{ $post->title }}</h3>
 
-                        </section>
+                                                        @if ($post->subtitle)
+                                                            <p>{{ $post->subtitle }}</p>
+                                                        @endif
+
+                                                    </header>
+                                                </a>
+
+                                                <p>
+                                                    Postado {{ $post->published_at->diffForHumans() }}
+                                                    @if ($post->tags->count())
+                                                        em
+                                                        {!! join(', ', $post->tagLinks()) !!}
+                                                    @endif
+                                                </p>
+
+                                                <footer>
+                                                    <a href="{{ $post->url($tag) }}" class="button alt">Ver mais</a>
+                                                </footer>
+
+                                            </section>
+                                        </div>
+
+                                    @if($count == 3 or $key + 1 == $max)
+                                        </div>
+                                    @endif
+
+                                <?php
+                                        if($count == 3) {
+                                            $count = 1;
+                                        } else {
+                                            $count++;
+                                        }
+                                 ?>
+
+                                @endforeach
+                        </div>
                     </div>
-                @endforeach
-
+                </div>
             </div>
-        </div>
-
 
 @stop

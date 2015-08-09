@@ -2,7 +2,7 @@
 
     <section class="box">
 
-        <a href="#" class="image featured">
+        <a href="{{ $post->url($tag) }}" class="image featured">
             <img src="{{ page_image($post->page_image) }}" alt="{{ $post->title }}" />
         </a>
 
@@ -28,8 +28,8 @@
 
         <footer>
             <ul class="actions">
-                <li><a href="#" class="button icon fa-file-text">Continue Lendo</a></li>
-                <li><a href="#" class="button alt icon fa-comment">33 Comentários</a></li>
+                <li><a href="{{ $post->url($tag) }}" class="button icon fa-file-text">Continue Lendo</a></li>
+                <li><a href="{{ $post->url($tag) }}" class="button alt icon fa-comment">33 Comentários</a></li>
             </ul>
         </footer>
 

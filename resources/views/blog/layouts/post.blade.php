@@ -24,9 +24,9 @@
                             <h2>{{ $post->title }}</h2>
                             <h3>{{ $post->subtitle }}</h3>
 
-                            <span>Postada em {{ $post->published_at->format('F j, Y') }}
+                            <span>Postado {{ $post->published_at->diffForHumans() }}
                                 @if ($post->tags->count())
-                                    in
+                                    em
                                     {!! join(', ', $post->tagLinks()) !!}
                                 @endif
                             </span>
@@ -41,11 +41,6 @@
 
 
                     </article>
-
-                    <!--<button class="btn btn-primary" onclick="history.go(-1)">
-                        « Back
-                    </button>
-                    -->
 
                     {{-- The Pager --}}
                     <div class="container">
