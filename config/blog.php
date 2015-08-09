@@ -21,8 +21,14 @@ return [
 
 
 return [
+    'name' => "Dev Boost",
     'title' > 'Dev Boost',
-    'posts_per_page' => 5,
+    'posts_per_page' => 10,
+    'subtitle' => 'Blog written in Laravel 5.1',
+    'description' => 'php, laravel',
+    'author' => 'Chuck Heintzelman',
+    'page_image' => 'home-bg.jpg',
+
     'uploads' => [
         'storage' => 's3',
         //'webpath' => 'developboost.s3-website-us-east-1.amazonaws.com'

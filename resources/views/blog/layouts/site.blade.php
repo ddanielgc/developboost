@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
     <meta charset="utf-8">
-    <meta name="description" content="development, programming, languages, database, SEO, Laravel, PHP, MYSQL">
-    <meta name="author" content="Daniel Gusmão Campos">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ config('blog.meta_description') }}">
+    <meta name="author" content="{{ config('blog.author') }}">
 
     <head>
-        <title>Dev Boost</title>
+        <title>{{ $title or config('blog.title') }}</title>
 
         <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
         <link rel="stylesheet" href="/assets/css/main.css" />
         <!--[if lte IE 8]><link rel="stylesheet" href="/public/assets/css/ie8.css" /><![endif]-->
+        {{-- HTML5 Shim and Respond.js for IE8 support --}}
+        <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </head>
-
 
     @yield('content')
 

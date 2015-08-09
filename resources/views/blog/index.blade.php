@@ -1,32 +1,58 @@
-<html>
-    <head>
-        <title>{{ config('blog.title') }}</title>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-    </head>
+@extends('blog.layouts.site')
 
-    <body>
+@section('content')
 
-        <div class="container">
-            <h1>{{ config('blog.title') }}</h1>
-            <h5>Page {{ $posts->currentPage() }} of {{ $posts->lastPage() }}</h5>
+    <body class="no-sidebar">
 
-            <hr>
+    <div id="page-wrapper">
 
-            <ul>
+        @include('blog.includes.menu')
+
+        <div class="row">
+            <div class="12u">
+                <!-- Blog -->
+                <header class="major">
+                    <h2>The Blog</h2>
+                </header>
+
                 @foreach ($posts as $post)
-                    <li>
-                        <a href="/blog/{{ $post->slug }}">{{ $post->title }}</a>
-                        <em>({{ $post->published_at->format('M jS Y g:ia') }})</em>
-                        <p>
-                            {{ str_limit($post->content) }}
-                        </p>
-                    </li>
+                    <div class="6u 12u(mobile)">
+                        <section class="box">
+
+                            <a href="#" class="image featured">
+                                <img src="images/pic08.jpg" alt="" />
+                            </a>
+
+                            <a href="{{ $post->url($tag) }}">
+                                <header>
+                                    <h3>{{ $post->title }}</h3>
+                                    @if ($post->subtitle)
+                                        <p>{{ $post->subtitle }}</p>
+                                    @endif
+                                </header>
+                            </a>
+
+                            <p>
+                                Posted on {{ $post->published_at->format('F j, Y') }}
+                                @if ($post->tags->count())
+                                    in
+                                    {!! join(', ', $post->tagLinks()) !!}
+                                @endif
+                            </p>
+
+                            <footer>
+                                <ul class="actions">
+                                    <li><a href="#" class="button icon fa-file-text">Continue Reading</a></li>
+                                    <li><a href="#" class="button alt icon fa-comment">33 comments</a></li>
+                                </ul>
+                            </footer>
+
+                        </section>
+                    </div>
                 @endforeach
-            </ul>
 
-            <hr>
-
-            {!! $posts->render() !!}
+            </div>
         </div>
-    </body>
-</html>
+
+
+@stop

@@ -1,4 +1,7 @@
-@extends('blog.layouts.site')
+@extends('blog.layouts.site', [
+  'title' => $post->title,
+  'meta_description' => $post->meta_description ?: config('blog.description'),
+])
 
 @section('content')
     <body class="no-sidebar">
@@ -12,18 +15,27 @@
 
                     <!-- Content -->
                     <article class="box post">
-                        <!--<a href="#" class="image featured">
-                            <img src="/images/pic01.jpg" alt="" />
+                        <a href="#" class="image featured">
+                            <img src="{{ page_image($post->page_image) }}" alt="" />
                         </a>
-                        -->
+
 
                         <header>
                             <h2>{{ $post->title }}</h2>
-                            <p>{{ $post->published_at->format('M jS Y g:ia') }}</p>
+                            <h3>{{ $post->subtitle }}</h3>
+
+                            <span>Posted on {{ $post->published_at->format('F j, Y') }}
+                                @if ($post->tags->count())
+                                    in
+                                    {!! join(', ', $post->tagLinks()) !!}
+                                @endif
+                            </span>
+
                         </header>
 
                         <p>
-                            {!! nl2br(e($post->content)) !!}
+                            <!--{!! nl2br(e($post->content)) !!}-->
+                            {!! $post->content_html !!}
                         </p>
 
 
@@ -67,11 +79,52 @@
 
                     </article>
 
-                    <button class="btn btn-primary" onclick="history.go(-1)">
+                    <!--<button class="btn btn-primary" onclick="history.go(-1)">
                         « Back
                     </button>
+                    -->
 
-                </div>
-            </div>
+                    {{-- The Pager --}}
+                    <div class="container">
+                        <div class="row">
+                            <ul class="pager">
+                                @if ($tag && $tag->reverse_direction)
+                                    @if ($post->olderPost($tag))
+                                        <li class="previous">
+                                            <a href="{!! $post->olderPost($tag)->url($tag) !!}">
+                                                <i class="fa fa-long-arrow-left fa-lg"></i>
+                                                Previous {{ $tag->tag }} Post
+                                            </a>
+                                        </li>
+                                    @endif
+                                    @if ($post->newerPost($tag))
+                                        <li class="next">
+                                            <a href="{!! $post->newerPost($tag)->url($tag) !!}">
+                                                Next {{ $tag->tag }} Post
+                                                <i class="fa fa-long-arrow-right"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+                                @else
+                                    @if ($post->newerPost($tag))
+                                        <li class="previous">
+                                            <a href="{!! $post->newerPost($tag)->url($tag) !!}">
+                                                <i class="fa fa-long-arrow-left fa-lg"></i>
+                                                Next Newer {{ $tag ? $tag->tag : '' }} Post
+                                            </a>
+                                        </li>
+                                    @endif
+                                    @if ($post->olderPost($tag))
+                                        <li class="next">
+                                            <a href="{!! $post->olderPost($tag)->url($tag) !!}">
+                                                Next Older {{ $tag ? $tag->tag : '' }} Post
+                                                <i class="fa fa-long-arrow-right"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endif
+                            </ul>
+                        </div>
 
+                    </div>
 @stop

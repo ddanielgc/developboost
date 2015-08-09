@@ -5,14 +5,20 @@
                 <div class="8u 12u(mobile)">
                     <section>
                         <header>
-                            <h2>Blandit nisl adipiscing</h2>
+                            <h2>Posts</h2>
                         </header>
+
                         <ul class="dates">
                             <li>
                                 <span class="date">Jan <strong>27</strong></span>
-                                <h3><a href="#">Lorem dolor sit amet veroeros</a></h3>
+
+                                <h3>
+                                    <a href="#">Lorem dolor sit amet veroeros</a>
+                                </h3>
+
                                 <p>Ipsum dolor sit amet veroeros consequat blandit ipsum phasellus lorem consequat etiam.</p>
                             </li>
+
                             <li>
                                 <span class="date">Jan <strong>23</strong></span>
                                 <h3><a href="#">Ipsum sed blandit nisl consequat</a></h3>
@@ -41,7 +47,11 @@
                         <header>
                             <h2>What's this all about?</h2>
                         </header>
-                        <a href="#" class="image featured"><img src="/images/pic10.jpg" alt="" /></a>
+
+                        <a href="#" class="image featured">
+                            <img src="/images/pic10.jpg" alt="" />
+                        </a>
+
                         <p>
                             This is <strong>Dopetrope</strong> a free, fully responsive HTML5 site template by
                             <a href="http://n33.co">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a> It's released for free under
@@ -127,7 +137,7 @@
                     <!-- Copyright -->
                     <div id="copyright">
                         <ul class="links">
-                            <li>&copy; Dev Boost. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                            <li>&copy; Dev Boost. All rights reserved.</li><li>Author: {{ config('blog.author') }}</li>
                         </ul>
                     </div>
 
