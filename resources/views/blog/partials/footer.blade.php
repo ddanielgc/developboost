@@ -79,6 +79,7 @@
 
                             @foreach($tags as $key => $tag)
                                 <li>
+                                    <i class="fa fa-tag" style="float: left; margin:5px;"></i>
                                     <a href="#">
                                         <h4>{{ $tag->title }}</h4>
 
