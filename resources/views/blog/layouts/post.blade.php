@@ -96,4 +96,14 @@
                     </div>
                 </div>
             </div>
+
+            <hr>
+
+            <div class="container">
+                <div class="row">
+                    @include('blog.partials.disqus')
+                </div>
+            </div>
+
+            <hr>
 @stop

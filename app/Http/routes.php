@@ -26,6 +26,13 @@ get('blog/{slug}', 'BlogController@showPost');
 get('contact', 'ContactController@showForm');
 post('contact', 'ContactController@sendContactInfo');
 
+// Rss Feed
+get('rss', 'BlogController@rss');
+
+//Site Map
+get('sitemap.xml', 'BlogController@siteMap');
+
+
 
 // Admin area
 get('admin', function () {

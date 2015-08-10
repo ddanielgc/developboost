@@ -124,11 +124,11 @@
                         </header>
 
                         <ul class="social">
-                            <li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
-                            <li><a class="icon fa-twitter" href="#"><span class="label">Twitter</span></a></li>
-                            <li><a class="icon fa-bitbucket" href="#"><span class="label">BitBucket</span></a></li>
-                            <li><a class="icon fa-linkedin" href="#"><span class="label">LinkedIn</span></a></li>
-                            <li><a class="icon fa-google-plus" href="#"><span class="label">Google+</span></a></li>
+                            <li><a class="icon fa-facebook" href="{{ config('blog.link_facebook') }}"><span class="label">Facebook</span></a></li>
+                            <li><a class="icon fa-twitter" href="{{ config('blog.link_twitter') }}"><span class="label">Twitter</span></a></li>
+                            <li><a class="icon fa-github" href="{{ config('blog.link_github') }}"><span class="label">BitBucket</span></a></li>
+                            <li><a class="icon fa-linkedin" href="{{ config('blog.link_linkedin') }}"><span class="label">LinkedIn</span></a></li>
+                            <li><a class="icon fa-rss" href="{{ url('rss') }}"><span class="label">RSS</span></a></li>
                         </ul>
 
                         <ul class="contact">

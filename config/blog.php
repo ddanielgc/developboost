@@ -18,9 +18,13 @@ return [
     'meta_description' => 'É um blog para aqueles antenados nas melhores opções para implementar suas idéais no universo web e mobile web. Sendo o próprio site uma prova de conceitos!',
     'author' => 'Daniel Gusmão',
     'page_image' => 'home-bg.jpg',
-
+    'rss_size' => 25,
     'uploads' => [
         'storage' => 's3',
         'webpath' => 'https://s3.amazonaws.com/developboost/'
     ],
+    'link_linkedin' => 'https://br.linkedin.com/in/danielgusmaocampos',
+    'link_github' => 'https://github.com/ddanielgc',
+    'link_twitter' => 'https://twitter.com/D_Danielgc',
+    'link_facebook' => 'https://facebook.com/daniel.gusmao.campos',
 ];
