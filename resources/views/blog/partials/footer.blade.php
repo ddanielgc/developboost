@@ -80,7 +80,8 @@
                             @foreach($tags as $key => $tag)
                                 <li>
                                     <i class="fa fa-tag" style="float: left; margin:5px;"></i>
-                                    <a href="#">
+
+                                    <a href="posts?tag={{ urlencode($tag->tag) }}">
                                         <h4>{{ $tag->title }}</h4>
 
                                         <h5>{{ $tag->subtitle }}</h5>

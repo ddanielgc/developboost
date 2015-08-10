@@ -14,7 +14,6 @@ class BlogController extends Controller
 
     public function home(Request $request)
     {
-
         //$tag = $request->get('tag');
 
         $data = $this->dispatch(new BlogIndexData(null));
@@ -25,12 +24,6 @@ class BlogController extends Controller
 
     public function posts(Request $request)
     {
-        /*
-         *
-         $posts = Post::where('published_at', '<=', Carbon::now())
-            ->orderBy('published_at', 'desc')
-            ->paginate(config('blog.posts_per_page'));
-        */
 
         $tag = $request->get('tag');
 
@@ -45,6 +38,7 @@ class BlogController extends Controller
 
     public function showPost(Request $request, $slug)
     {
+
         $post = Post::with('tags')->whereSlug($slug)->firstOrFail();
         $tag = $request->get('tag');
 

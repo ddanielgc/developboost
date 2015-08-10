@@ -12,9 +12,17 @@
                 <div class="container">
                     <div class="row">
                         <div class="12u">
-                            <header class="major">
-                                <h2>Postagens</h2>
-                            </header>
+
+                                @if(isset($tag->page_image))
+                                    <a href="#" class="image featured">
+                                        <img src="{{ page_image($tag->page_image) }}" alt="{{ $tag->name }}">
+                                    </a>
+                                @endif
+
+
+                                <header class="major">
+                                    <h2>Postagens</h2>
+                                </header>
 
                                 <?php $count = 1 ?>
                                 <?php $max = count($posts) ?>
