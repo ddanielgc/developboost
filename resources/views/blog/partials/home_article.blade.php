@@ -29,7 +29,10 @@
         <footer>
             <ul class="actions">
                 <li><a href="{{ $post->url($tag) }}" class="button icon fa-file-text">Continue Lendo</a></li>
-                <li><a href="{{ $post->url($tag) }}" class="button alt icon fa-comment">33 Comentários</a></li>
+
+                <li>
+                    <a class="button alt icon fa-comment" href="{{ $post->url($tag) }}#disqus_thread">Comentários</a>
+                </li>
             </ul>
         </footer>
 
