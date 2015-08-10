@@ -12,7 +12,8 @@
     "dflydev/apache-mime-types": "^1.0",
     "league/flysystem-aws-s3-v3": "^1.0",
     "doctrine/dbal": "^2.5",
-    "nesbot/carbon": "^1.20"
+    "nesbot/carbon": "^1.20",
+    "guzzlehttp/guzzle": "^6.0"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

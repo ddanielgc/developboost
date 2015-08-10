@@ -42,14 +42,14 @@ class BlogController extends Controller
         $post = Post::with('tags')->whereSlug($slug)->firstOrFail();
         $tag = $request->get('tag');
 
-        $data = $this->dispatch(new BlogIndexData(null));
-        $posts = $data["posts"];
-
-        $tags =  $tags = Tag::all();
-
         if($tag) {
             $tag = Tag::whereTag($tag)->firstOrFail();
         }
+
+
+        $data = $this->dispatch(new BlogIndexData(null));
+        $posts = $data["posts"];
+        $tags = Tag::all();
 
         return view($post->layout, compact( 'post', 'tag', 'posts', 'tags'));
     }

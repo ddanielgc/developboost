@@ -13,7 +13,7 @@
 
 // Blog pages
 
-Route::get('/', function () {
+get('/', function () {
     return redirect('blog/home');
 });
 
@@ -21,6 +21,10 @@ Route::get('/', function () {
 get('blog/home', 'BlogController@home');
 get('blog/posts', 'BlogController@posts');
 get('blog/{slug}', 'BlogController@showPost');
+
+// contac email
+get('contact', 'ContactController@showForm');
+post('contact', 'ContactController@sendContactInfo');
 
 
 // Admin area
